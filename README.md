@@ -225,7 +225,8 @@ refer to the [actuator setup](setup-instructions/actuators-setup.md)
   - You can run the following command:
 
 ```bash
-sudo apt-get update && sudo apt-get install influxdb2
+wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.7.0-arm64.deb
+sudo dpkg -i influxdb2-2.7.0-arm64.deb
 ```
 
 - **Java**
@@ -279,7 +280,7 @@ The actuator script is a python script used to physically trigger different comp
 
 First you need to pull the [actuator repository](https://github.com/MarcoAmato/greenhouse_actuator) from GitHub
 ```bash
-git pull https://github.com/MarcoAmato/greenhouse_actuator.git
+git clone https://github.com/MarcoAmato/greenhouse_actuator.git
 ```
 
 **Run the script**
@@ -301,7 +302,7 @@ To run a demo of the SMOL scheduler system
 1. Pull the [SMOL scheduler repository](https://github.com/N-essuno/smol_scheduler) from GitHub
 
 ```bash
-git pull https://github.com/N-essuno/smol_scheduler.git
+git clone https://github.com/N-essuno/smol_scheduler.git
 ```
 
 1. Setup the configuration files in `smol_scheduler/demo/` according to your network setup

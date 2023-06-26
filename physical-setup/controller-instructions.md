@@ -7,11 +7,10 @@
 ## Connect DHT22 sensor
 
 1. Refer to the following schematics:
-![Schematics](Raspberry-Pi-Interface-with-a-DHT22-sensor-Wiring-Schematic.webp)
+![Schematics](imgs/Raspberry-Pi-Interface-with-a-DHT22-sensor-Wiring-Schematic.webp)
 2. Install dependencies:
     - `sudo apt-get install python3-pip git`
     - `sudo pip3 install --upgrade setuptools`
-    - `sudo reboot`
 3. Install adafruit-circuitpython-dht library (we avoid using the deprecated Adafruit_DHT one):
     - `git clone https://github.com/donskytech/raspberrypi-projects`
     - `cd raspberrypi-projects/dht22`
@@ -36,7 +35,7 @@ import time
 import board
 import adafruit_dht
 
-# Initial the dht device, with data pin connected to:
+# Initialize the dht device, with whichever data pin it's connected to:
 dhtDevice = adafruit_dht.DHT22(board.D4)
 
 # you can pass DHT22 use_pulseio=False if you wouldn't like to use pulseio.
@@ -71,6 +70,7 @@ while True:
 
 1. Install dependencies:
     - `pip install opencv-python` (one could use picamera2 instead but it has limited support for USB cameras, picamera is not supported on 64bit architectures)
+    - `sudo apt install libg11`
 
 ### Example script to print light level
 
@@ -108,7 +108,7 @@ cv2.destroyAllWindows()
 
 ## Connect sensors to MCP3008 ADC
 
-1. Refer to the following schematics: ![MCP3008-schematics](MCP3008-schematics.png)
+1. Refer to the following schematics: ![MCP3008-schematics](imgs/MCP3008-schematics.png)
 2. Install dependencies:
     - `sudo apt-get install python3-spidev`
 
@@ -116,8 +116,7 @@ The adc can accept 8 inputs in the 8 different channels, channel numbering start
 
 ### Classes needed to read the ADC and example script
 
-```python
-
+``` python
 #file: MCP3008.py
 
 from spidev import SpiDev
@@ -142,12 +141,12 @@ class MCP3008:
         self.spi.close()
 ```
 
-```python
-
+``` python
 from MCP3008 import MCP3008
+
+adc = MCP3008()
 value = adc.read(channel = 0) # You can of course adapt the channel to be read out
 print("Applied voltage: %.2f" % (value / 1023.0 * 3.3))
-
 ```
 
 ## Connect raspberry pi NoIR camera

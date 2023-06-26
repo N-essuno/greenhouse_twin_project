@@ -2,7 +2,8 @@
 
 ## Connect a relay for a pump
 
-1. Refer to the following schematics: ![relay-to-pump-connection](relay-to-pump-connection.png)
+1. Refer to the following schematics: ![relay-to-pump-connection](imgs/relay-to-pump-connection.png)
+2. Use the library from git as referenced in the other module
 
 ### Example script
 
