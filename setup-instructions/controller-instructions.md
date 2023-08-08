@@ -37,7 +37,7 @@ import board
 import adafruit_dht
 
 # Initial the dht device, with data pin connected to:
-dhtDevice = adafruit_dht.DHT22(board.D4)
+dhtDevice = adafruit_dht.DHT22(board.D18)
 
 # you can pass DHT22 use_pulseio=False if you wouldn't like to use pulseio.
 # This may be necessary on a Linux single board computer like the Raspberry Pi,
@@ -69,7 +69,8 @@ while True:
 
 ## Use a webcam as approximation of a light sensor
 
-1. Install dependencies:
+1. Plug in a USB webcam
+2. Install dependencies:
     - `pip install opencv-python` (one could use picamera2 instead but it has limited support for USB cameras, picamera is not supported on 64bit architectures)
 
 ### Example script to print light level
@@ -106,7 +107,7 @@ cv2.destroyAllWindows()
 
 ```
 
-## Connect sensors to MCP3008 ADC
+## Connect sensors (moisture) to MCP3008 ADC
 
 1. Refer to the following schematics: ![MCP3008-schematics](MCP3008-schematics.png)
 2. Install dependencies:
@@ -166,3 +167,5 @@ print("Applied voltage: %.2f" % (value / 1023.0 * 3.3))
     - `sudo pip3 install -U numpy`
     - `sudo pip3 install opencv-python`
     - `sudo apt install -y libatlas-base-dev`
+
+# TODO: add example script

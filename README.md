@@ -208,6 +208,8 @@ Assuming that the host computer and the data collectors are already running as s
 
 ## **Project Setup**
 
+We assume that Raspberry Pi OS is installed on all three systems
+
 ## **Data Collectors Setup**
 
 For a complete guide on how to set up the controllers,
@@ -240,6 +242,8 @@ sudo apt install openjdk-17-jdk openjdk-17-jre
 ### **Run Demo**
 
 #### **Data collector**
+
+TODO: add here the parts about the configuration file
 
 To execute a demo of the interaction between data collectors and host machine, first pull the [data-collector repository](https://github.com/N-essuno/greenhouse-data-collector) from GitHub
 
